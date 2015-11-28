@@ -2,6 +2,21 @@ html, body {
     height: 100%;
 }
 
+h1 {
+    color: #0099FF;
+    font: bold 15px verdana, sans-serif;
+}
+
 .full-height {
     height: 800px;
+}
+
+button {
+  letter-spacing: 2px;
+
+}
+
+.col-md-3 {
+    padding-left: 25px;
+    padding-top: 30px;
 }
