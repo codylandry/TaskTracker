@@ -11,6 +11,15 @@ h1 {
     height: 800px;
 }
 
+#right-column {
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+
+
+
+
 button {
   letter-spacing: 2px;
 
