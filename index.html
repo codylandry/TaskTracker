@@ -20,17 +20,38 @@
     <![endif]-->
 </head>
 <body>
-<div class="container-fluid"> 
+<div class="container-fluid">
     <div class="row">
         <div class="panel panel-default">
             <!-- Todo: Style Header Bar -->
+            Top Bar
         </div>
         <div class="row">
             <div class="col-md-3 panel panel-default full-height">
                 <!-- Todo: Add Buttons -- Courtney-->
             </div>
-            <div class="col-md-9 panel panel-default full-height">
-                <!-- Todo: Add Reminders Section -- Cody -->
+            <div id='right-column' class="col-md-9">
+                <div class="panel panel-default full-height">
+                    <div class="panel-heading"><h5>Tasks</h5></div>
+                    <!-- Todo: Add Reminders Section -- Cody -->
+                    <div id="task-table">
+                        <table class="table">
+                            <col width="10%">
+                            <col width="70%">
+                            <col width="20%">
+                            <tr>
+                                <th class="tbl-chkbox">Status</th>
+                                <th>Description</th>
+                                <th>Due Date</th>
+                            </tr>
+                            <tr>
+                                <td class="tbl-chkbox"><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                <td>Smith</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -5,3 +5,11 @@ html, body {
 .full-height {
     height: 800px;
 }
+
+#right-column {
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+
+
