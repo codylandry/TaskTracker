@@ -15,22 +15,16 @@ var tasks = [
      due_date: "11-15-2015"},
     {status: false,
      description: "Cook Dinner",
-     due_date: new Date('11/18/2015').toDateString()}
+     due_date: "11-15-2015"}
 ];
 
 
-function updateTask(index){
-    var row = $('[data-index=' + index + ']').parent();
-    console.log(row);
 
-    tasks[index] = {
-        status: row.children('.taskChkBox').val(),
-        description: row.siblings('.taskDescription').text(),
-        due_date: row.siblings('.taskDueDate').text()
-    };
-    console.log(tasks)
+function createTblRow (element, index) {
+    return "<tr><td><input id='taskChkBox" + index + "' type='checkbox'></td>" +
+                        "<td>" + element.description +"</td>" +
+                        "<td>" + element.due_date + "</td></tr>";
 }
-
 
 
 function buildTaskTable () {
