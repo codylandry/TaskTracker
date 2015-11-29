@@ -29,24 +29,25 @@ function createTblRow (element, index) {
 
 function buildTaskTable () {
     var taskTableHTML = '<table class="table"><col width="10%"><col width="70%"><col width="20%">';
-    tasks.forEach(function(v, i , a) {
-        taskTableHTML += createTblRow(v,i,a)});
+    tasks.forEach(function(v, i, a) {
+        taskTableHTML += "<tr><td><input class='taskChkBox' data-index=" + i + " id='taskChkBox" + i + "' type='checkbox'></td>" +
+                        "<td class='taskDescription'>" + v.description +"</td>" +
+                        "<td class='taskDueDate'>" + v.due_date + "</td></tr>";});
     taskTableHTML += "<tr>" +
                         "<td>" +
                         "<input type='submit'></td>" +
                         "<td><input type='text'></td>" +
-                        "<td><input type='date'></td>" +
+                        "<td><input id='newTaskDate' type='text'></td>" +
                         "</tr></table>";
     $('#task-table').html(taskTableHTML);
 }
 
-
-
 $(document).ready(function(){
 
     buildTaskTable();
-
-
-
+    $('#newTaskDate').datepicker();
+    $('.taskChkBox').click(function(){
+        $(this).parent().siblings().toggleClass('strike-through');
+        updateTask($(this).attr('data-index'));
+    });
 });
-
