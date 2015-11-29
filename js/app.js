@@ -4,7 +4,7 @@
 
 var taskTableHTML = '<table class="table"><col width="10%"><col width="70%"><col width="20%">';
 var tasks = [];
-
+var sort_ascending = true;
 
 function newTask () {
     if ($('#newTaskDesc').val() == '') {alert('Please Enter a Description.'); return}
@@ -30,7 +30,12 @@ function newTask () {
 function buildTaskTable () {
     var taskTableHTML = '<table class="table"><col width="10%"><col width="70%"><col width="20%">';
 
-    var sorted_tasks = tasks.sort(function(a, b){return new Date(a.due_date) - new Date(b.due_date);});
+    var sorted_tasks = tasks.sort(function(a, b){
+        if  (sort_ascending) {
+           return new Date(a.due_date) - new Date(b.due_date)}
+        else {
+           return new Date(b.due_date) - new Date(a.due_date)};
+    });
 
     sorted_tasks.forEach(function(v, i, a) {
         taskTableHTML += "<tr><td><input class='taskChkBox' data-index=" + i + " id='taskChkBox" + i + "' type='checkbox'></td>" +
@@ -45,20 +50,18 @@ function buildTaskTable () {
     $('#task-table').html(taskTableHTML);
 }
 
+function toggle_sort_order() {
+    sort_ascending = !sort_ascending;
+    buildTaskTable()
+}
 
 $(document).ready(function(){
 
     buildTaskTable();
-<<<<<<< HEAD
-
-
-
-});
-=======
     $('#newTaskDate').datepicker();
     $('.taskChkBox').click(function(){
         $(this).parent().siblings().toggleClass('strike-through');
     });
     $('#newTaskBtn').click(newTask);
+    $('#asc').click(toggle_sort_order);
 });
->>>>>>> refs/remotes/origin/master

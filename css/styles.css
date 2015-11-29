@@ -53,3 +53,15 @@ button {
     padding-top: 30px;
 }
 /*sidebar end*/
+
+/*task panel*/
+h5 {
+    display: inline;
+}
+
+#asc {
+    width: 42px;
+    height: 30px;
+    margin-left: 90%;
+}
+/*task panel end*/
