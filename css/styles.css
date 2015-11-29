@@ -38,7 +38,9 @@ img:hover {
 }
 
 
-
+.strike-through {
+    text-decoration: line-through;
+}
 
 /*sidebar*/
 button {
