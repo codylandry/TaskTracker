@@ -16,10 +16,6 @@ h1 {
     padding-right: 40px;
 }
 
-
-
-
-
 button {
   letter-spacing: 2px;
 
@@ -28,4 +24,8 @@ button {
 .col-md-3 {
     padding-left: 25px;
     padding-top: 30px;
+}
+
+.strike-through {
+    text-decoration: line-through;
 }
